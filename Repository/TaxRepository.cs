@@ -24,7 +24,7 @@ namespace DesafioDatabase{
 
 
         public Tax GetTaxBasedOnATransaction(Transaction transaction){
-            Tax Tax = _acquirerRepository.GetAllAcquirers()
+            var Tax = _acquirerRepository.GetAllAcquirers()
                                          .SingleOrDefault(ac => ac.Type == transaction.Acquirer)
                                          .Taxes.SingleOrDefault(tx => tx.Brand == transaction.Brand 
                                          && tx.Type == transaction.Type);

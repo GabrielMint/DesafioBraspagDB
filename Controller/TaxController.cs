@@ -14,12 +14,12 @@ namespace DesafioDatabase{
         }
 
         [HttpGet]
-        public IEnumerable<Tax> GetAllTaxes(){
+        public IEnumerable<Tax> Get(){
             return _repository.GetAllTaxes();
         }
 
         [HttpPost]
-        public IActionResult CreateTax([FromBody] Tax tax){
+        public IActionResult Post([FromBody] Tax tax){
 
             _repository.CreateTax(tax);
 
@@ -27,7 +27,7 @@ namespace DesafioDatabase{
         }
 
         [HttpPost]
-        public ActionResult<Tax> GetTaxBasedOnATransaction(Transaction transaction){
+        public ActionResult<Tax> Post(Transaction transaction){
 
             var tax = _repository.GetTaxBasedOnATransaction(transaction);
 
